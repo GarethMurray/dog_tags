@@ -6,6 +6,7 @@ export default function Home() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -15,10 +16,21 @@ export default function Home() {
       name,
     });
 
+    setIsDisabled(true);
+
     try {
-      await fetch("/api/mail", { method: "POST", body });
+      const res = await fetch("/api/mail", { method: "POST", body });
+      const json = await res.json();
+      if (json?.message === "Success") {
+        setEmail("");
+        setName("");
+        setText("");
+        alert("Thanks for contacting me, email sent successfully");
+      }
+      setIsDisabled(false);
     } catch (e) {
       console.error(e);
+      alert("Oh no, this didn't work. Please try again?");
     }
   };
 
@@ -58,7 +70,10 @@ export default function Home() {
             onChange={(e) => setText(e.target.value)}
           />
         </label>
-        <button className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <button
+          className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          disabled={isDisabled}
+        >
           Submit
         </button>
       </form>
