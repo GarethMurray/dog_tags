@@ -15,7 +15,7 @@ export default async function handler(
 
     await sendEmail({
       from: email,
-      to: process.env.SMTP_USER,
+      to: process.env.SMTP_USER!,
       subject: "URGENT: DOG ALERT",
       html,
     });

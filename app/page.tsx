@@ -24,7 +24,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-start p-40 container gap-4 mx-auto">
-      <h1 className="text-4xl">You've found our dog!</h1>
+      <h1 className="text-4xl">You`&apos;`ve found our dog!</h1>
       <p>Thank you so much for taking the time to follow the qr code</p>
       <p>
         Please send me an email using this form, I will get back to you
