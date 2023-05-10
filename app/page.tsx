@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Image from 'next/image'
 
 export default function Home() {
   const [name, setName] = useState("");
@@ -36,6 +37,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-start p-40 container gap-4 mx-auto">
+      <Image src="/dog.jpg" alt="A picture of a dog"></Image> 
       <h1 className="text-4xl">You&apos;ve found our dog!</h1>
       <p>Thank you so much for taking the time to follow the qr code</p>
       <p>
