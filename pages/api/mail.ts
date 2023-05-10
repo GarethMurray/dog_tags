@@ -19,6 +19,12 @@ export default async function handler(
       subject: "URGENT: DOG ALERT",
       html,
     });
+    await sendEmail({
+      from: email,
+      to: process.env.EMAIL2!,
+      subject: "URGENT: DOG ALERT",
+      html,
+    });
   } else {
     return res.json({ message: "Oh no this failed!" });
   }

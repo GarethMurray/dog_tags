@@ -24,14 +24,14 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-start p-40 container gap-4 mx-auto">
-      <h1 className="text-4xl">You`&apos;`ve found our dog!</h1>
+      <h1 className="text-4xl">You&apos;ve found our dog!</h1>
       <p>Thank you so much for taking the time to follow the qr code</p>
       <p>
         Please send me an email using this form, I will get back to you
         urgently!!
       </p>
-      <form onSubmit={handleSubmit} className="w-full">
-        <label className="flex flex-col gap-2 w-1/2">
+      <form onSubmit={handleSubmit} className="w-full ">
+        <label className="flex flex-col gap-2 w-1/2 mb-4">
           Your name
           <input
             value={name}
@@ -40,7 +40,7 @@ export default function Home() {
             onChange={(e) => setName(e.target.value)}
           />
         </label>
-        <label className="flex flex-col gap-2 w-1/2">
+        <label className="flex flex-col gap-2 w-1/2 mb-4">
           Your email
           <input
             value={email}
