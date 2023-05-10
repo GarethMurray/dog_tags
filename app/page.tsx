@@ -3,9 +3,9 @@
 import { FormEvent, useState } from "react";
 
 export default function Home() {
-  const [name, setName] = useState("1234");
-  const [email, setEmail] = useState("arst@gmail.com");
-  const [text, setText] = useState("zxcd");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [text, setText] = useState("");
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
