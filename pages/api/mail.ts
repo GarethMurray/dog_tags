@@ -50,11 +50,11 @@ export const sendEmail = async (data: EmailPayload) => {
     },
   });
 
-  transporter.sendMail(data, (error, info) => {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Email sent: " + info.response);
-    }
-  });
+  console.log("transporter", transporter);
+  try {
+    await transporter.sendMail(data);
+  } catch (e: unknown) {
+    console.log("error sending mail", e);
+    console.log("data:", data);
+  }
 };
