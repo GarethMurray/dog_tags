@@ -83,19 +83,13 @@ export default function Home() {
         </form>
         <h2 className="text-4xl font-bold mt-6">Thank you!!!</h2>
       </div>
-      <div className="flex flex-col gap-4 w-full md:w-1/3">
-        <Image
-          src={spikeJpg}
-          alt="A picture of a dog"
-          placeholder="blur"
-          className=""
-        />
-        <Image
-          src={mileyJpg}
-          alt="A picture of a dog"
-          placeholder="blur"
-          className=""
-        />
+      <div className="flex flex-col md:flex-row md:w-1/3 gap-6">
+        <div className="md:h-1/2 object-cover">
+          <Image src={spikeJpg} alt="A picture of a dog" placeholder="blur" />
+        </div>
+        <div className="md:h-1/2 object-cover">
+          <Image src={mileyJpg} alt="A picture of a dog" placeholder="blur" />
+        </div>
       </div>
     </main>
   );
